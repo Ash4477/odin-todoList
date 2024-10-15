@@ -1,3 +1,9 @@
 import "./styles.css";
+import "./custom-checbox.css";
+import addItemModal from "./code/addItemModal";
+import createTodo from "./code/createTodo";
 
-document.write("Hello, JS + Webpack");
+const start = function() {
+    document.querySelector(".addtodo-create").appendChild(createTodo.createNoteDom());
+    addItemModal();
+} ();

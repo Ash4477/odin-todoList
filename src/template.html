@@ -3,28 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../assets/favicon.png">
     <script src="https://kit.fontawesome.com/d2f89adc8d.js" crossorigin="anonymous"></script>
-    <title>Webpack</title>
+    <title>// TO-DO</title>
 </head>
 <body>
     <header><h1><img src="../assets/logo.png" alt="logo"></h1></header>
     <nav>
         <ul>
-            <li><p>Home</p></li>
-            <li><p>Today</p></li>
-            <li><p>This Week</p></li>
+            <li><p>Home</p><span class="count">2</span></li>
+            <li><p>Today</p><span class="count">1</span></li>
+            <li><p>This Week</p><span class="count">1</span></li>
             <li>
-                <div>
-                    <p>Projects</p>
-                    <ul></ul>
+                <div class="sublist">
+                    <p class="no-active">Projects</p>
+                    <ul>
+                        <li><p>Gym</p><span class="count">5</span></li>
+                        <li><p>Study</p><span class="count">1</span></li>
+                        <li><p>Work</p><span class="count">1</span></li>
+                    </ul>
                 </div>
             </li>
             <li><p>Notes</p></li>
-            <li><button><i class="fa-solid fa-plus"></i></button></li>
+            <li><button id="add-btn"><i class="fa-solid fa-plus"></i></button></li>
+            <dialog class="addtodo-dialog">
+                <div class="addtodo-container">
+                    <div class="addtodo-header"><h2>Create a new...</h2><button id="close-btn"><i class="fa-solid fa-xmark"></i></button></div>
+                    <div class="addtodo-type">
+                        <ul>
+                            <li><p>To Do</p></li>
+                            <li><p>Project</p></li>
+                            <li><p>Note</p></li>
+                        </ul>
+                    </div>
+                    <div class="addtodo-create">
+    
+                    </div>
+                </div>
+            </dialog>
         </ul>
     </nav>
     <main>
-
+        <div class="todo-item-box">
+            <div>
+                <label class="custom-checkbox">
+                    <input type="checkbox" />
+                    <span class="checkmark"></span>
+                </label>
+                <p>cook dinner</p>
+            </div>
+            <div>
+                <button class="details-btn">DETAILS</button>
+                <p class="date">Oct 13th</p>
+                <button class="icon"><i class="fa-solid fa-pen-to-square fa-lg"></i></button>
+                <button class="icon"><i class="fa-solid fa-trash fa-lg"></i></button>
+            </div>
+        </div>
     </main>
 </body>
 </html>

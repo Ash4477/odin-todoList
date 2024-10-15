@@ -1,0 +1,55 @@
+    /* custom checbox styles */
+    .custom-checkbox input[type="checkbox"] {
+        display: none;
+    }
+    
+    /* Create a custom checkbox look */
+    .custom-checkbox {
+        display: inline-block;
+        cursor: pointer;
+        user-select: none;
+        font-size: 16px;
+        position: relative;
+        padding-left: 25px;
+    }
+
+        /* Style the checkmark box */
+    .custom-checkbox .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: transparent;
+        border-radius: 2px;
+        border: 2px solid var(--color-3);
+    }
+
+    /* Checked state */
+    .custom-checkbox input[type="checkbox"]:checked + .checkmark {
+        background-color: var(--color-3);
+        border-color: var(--color-3);
+    }
+
+    /* Add a tick mark when checked */
+    .custom-checkbox .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the tick mark when the checkbox is checked */
+    .custom-checkbox input[type="checkbox"]:checked + .checkmark:after {
+        display: block;
+    }
+
+    /* Style the tick mark */
+    .custom-checkbox .checkmark:after {
+        left: 5px;
+        top: 2px;
+        width: 3px;
+        height: 8px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }

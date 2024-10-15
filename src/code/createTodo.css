@@ -1,0 +1,170 @@
+.addtodo-dialog {
+    border: 0;
+    min-width: 70vw;
+    height: 80vh;
+    background-color: var(--color-1);
+    position: absolute;
+    top: 10%;
+    margin: 0 auto;
+    animation: grow 0.3s ease forwards;
+}
+
+.addtodo-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 40px 1fr;
+
+    grid-template-areas: 
+    "addtodo-header addtodo-header"
+    "addtodo-nav addtodo-create";
+}
+
+.addtodo-header {
+    grid-area: addtodo-header;
+    background-color: var(--main-theme);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+        font-size: 1.5rem;
+        color: var(--color-2);
+    }
+
+    #close-btn {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.addtodo-type {
+    grid-area: addtodo-nav;
+    background-color: var(--color-2);
+    border-right: 1px solid gray;
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 1rem 2rem;
+        padding-right: 3rem;
+    }
+}
+
+.addtodo-create {
+    grid-area: addtodo-create;
+}
+
+.addtodo-create > div {
+    height: calc(100% - 35px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    padding: 1rem;
+
+    .input-box{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .buttons-box {
+        width: 100%;
+    }
+
+    .align-box {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .create-button:hover {
+        background-color: var(--color-3);
+        color: white;
+    }
+
+    input, textarea {
+        font-family: Lato, sans-serif;
+        font-weight: 400;
+        padding: 0 0.5rem;
+        font-size: 1.3rem;
+        background-color: transparent;
+        outline: none;
+        border: 0;
+    }
+
+    textarea {
+        font-size: 1.1rem;
+    }
+
+    label {
+        font-size: 1.2rem;
+        font-weight: 400;
+    }
+
+    #due-date-input, button {
+        background-color: transparent;
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: .2rem .5rem;
+        color: var(--color-3);
+        border: 1px solid var(--color-3);
+        border-radius: 3px;
+        margin-left: 10px;
+        text-transform: uppercase;
+    }
+
+    button {
+        transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+        font-size: 0.7rem;
+    }
+
+    .low-p {
+        margin-left: 1.6rem;
+        color: var(--low-p);
+        border-color: var(--low-p);
+    }
+    .low-p:hover{
+        color:white;
+        background-color: var(--low-p);
+    }
+    .med-p {
+        color: var(--med-p);
+        border-color: var(--med-p);
+    }
+    .med-p:hover{
+        color: white;
+        background-color: var(--med-p);
+    }
+    .high-p {
+        color: var(--high-p);
+        border-color: var(--high-p);
+    }
+    .high-p:hover{
+        color: white;
+        background-color: var(--high-p);
+    }
+}
+
+.addtodo-dialog p {
+    color: var(--font-color);
+    font-size: 1.3rem;
+}
+
+@keyframes grow {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+}

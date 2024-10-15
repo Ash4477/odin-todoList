@@ -9,6 +9,8 @@
     --main-theme: #c38d9e;
     --color-1: #f7f7f7;
     --color-2: #eeeeee;
+    --color-3: #3ba395;
+    --font-color: #501f3a;
     --low-p: #008000;
     --med-p: #ffa500;
     --high-p: #ff0000;
@@ -18,13 +20,24 @@ body {
     width: 100vw;
     height: 100vh;
     font-family: "Lato", sans-serif;
+    background-color: var(--main-theme);
+    color: var(--font-color);
+    font-weight: 350;
+    font-size: 1.2rem;
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 6fr;
+    grid-template-rows: 70px 1fr;
 
     grid-template-areas: 
     "header header"
     "nav main";
+}
+
+button {
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: Lato, sans-serif;
+    color: var(--font-color);
 }
 
 header {
@@ -36,40 +49,76 @@ header {
     }
 
     img {
-        max-width: 300px;
+        max-width: 250px;
     }
 }
 
 nav {
+    border-right: 1px solid gray;
     grid-area: nav;
     background-color: var(--color-2);
     font-weight: 350;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 
-    ul:first-child {
-        border: 1px solid red;
-        padding: 1rem 2rem;
+    ul {
         list-style-type: none;
         display: flex;
         flex-direction: column;
         gap: 20px;
     }
 
-    p:hover {
+    ul:first-child {
+        padding: 1rem 2rem;
+        padding-right: 3rem;
+    }
+
+    .sublist {
+        width: 100%;
+    }
+
+    .sublist > ul {
+        gap: 15px;
+        padding-top: 0.5rem;
+        padding-left: 1rem;
+        font-size: 1.3rem;
+    }
+
+    p:not(.no-active):hover {
         font-weight: bold;
     }
 
-    p:hover::before {
+    p:not(.no-active):hover::before {
         content: "// ";
     }
 
-    p {
+    p:not(.no-active) {
         cursor: pointer;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .count {
+        color: white;
+        background-color: var(--main-theme);
+        font-size: 0.7rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
     }
 
     button {
         background-color: var(--main-theme);
         color: white;
+        margin-top: 1rem;
         padding: 0.5rem 0.7rem;
         border: 0;
         border-radius: 50%;
@@ -81,4 +130,58 @@ nav {
 main {
     grid-area: main;
     background-color: var(--color-1);
+    padding: 2rem;
+
+    .todo-item-box {
+        border-left: 3px solid var(--high-p);
+        background-color: var(--color-2);
+        padding: 1rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .todo-item-box > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .custom-checkbox {
+        margin-top: 4px;
+        align-self: flex-start;
+    }
+
+    .details-btn {
+        color: var(--color-3);
+        padding: 0.3rem 0.7rem;
+        border-color: var(--color-3);
+        border-style:solid;
+        border-radius: 2px;
+        border-width: 1px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .details-btn:hover {
+        color: white;
+        background-color: var(--color-3);
+    }
+
+    .date {
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+
+    .icon {
+        background-color: transparent;
+        border: hidden;
+        cursor: pointer;
+    }
+
+    .icon:hover > i {
+        color: var(--color-3);
+        transition: color 0.2s ease-in-out;
+    }
 }
