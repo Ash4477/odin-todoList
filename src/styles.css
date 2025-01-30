@@ -129,17 +129,27 @@ nav {
 
 main {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     background-color: var(--color-1);
     padding: 2rem;
 
     .todo-item-box {
         border-left: 3px solid var(--high-p);
         background-color: var(--color-2);
-        padding: 1rem 1rem;
+        padding: 0.8rem 0.8rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        transition: scale 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
+
+    .todo-item-box:hover{
+        scale: 1.001;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
 
     .todo-item-box > div {
         display: flex;
